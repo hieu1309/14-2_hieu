@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine Thả Thính 💘</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: #ffebf0;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        position: relative;
+      }
+      h1 {
+        font-size: 3em;
+        color: #ff4081;
+        text-shadow: 2px 2px 5px #ff80ab;
+        animation: glow 1.5s infinite alternate;
+      }
+      @keyframes glow {
+        from {
+          text-shadow: 2px 2px 10px #ff4081;
+        }
+        to {
+          text-shadow: 4px 4px 20px #ff80ab;
+        }
+      }
+      .container {
+        margin-top: 50px;
+        background: rgba(255, 192, 203, 0.4);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .gif {
+        width: 200px;
+        margin: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border: 5px solid #ff4081;
+      }
+      .caption {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #d81b60;
+      }
+      .buttons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .btn {
+        font-size: 1.2em;
+        padding: 12px 24px;
+        margin: 10px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        background-color: #ff69b4;
+        color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+      .btn:hover {
+        background-color: #ff1493;
+        transform: scale(1.1);
+      }
+      .floating-hearts {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: url("https://cdn-icons-png.flaticon.com/512/833/833472.png")
+          no-repeat center;
+        background-size: cover;
+        animation: float 5s linear infinite;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh);
+          opacity: 0;
+        }
+      }
+    </style>
+    <script>
+      function createFloatingHearts() {
+        for (let i = 0; i < 10; i++) {
+          let heart = document.createElement("div");
+          heart.className = "floating-hearts";
+          heart.style.left = Math.random() * window.innerWidth + "px";
+          heart.style.top = Math.random() * window.innerHeight + "px";
+          document.body.appendChild(heart);
+          setTimeout(() => heart.remove(), 5000);
+        }
+      }
+      setInterval(createFloatingHearts, 1000);
+      function agreed() {
+        document.body.innerHTML =
+          "<h1>🎊 Chúc mừng! 💖</h1>" +
+          '<img src="cute1.gif" alt="Cute celebration animation" class="gif">' +
+          '<p class="caption">"🎉 Chúng ta có một cuộc hẹn rồi nhé! 💑"</p>';
+      }
+      function refused() {
+        document.body.innerHTML =
+          "<h1>😢 Chờ lúc khác à? 🥺</h1>" +
+          '<img src="cute3.gif" alt="Sad cute animation" class="gif">' +
+          '<p class="caption">"💔 Chọn lại đi mà... 😭"</p>' +
+          '<button class="btn" onclick="agreed()">💞 Em đồng ý và quay lại 💞</button>';
+      }
+    </script>
+  </head>
+  <body>
+    <h1>💘 Cần tìm người đi chơi chung 14-2 💕</h1>
+    <div class="container">
+      <img src="cute2.gif" alt="Cute love animation" class="gif" />
+      <p class="caption">
+        "💖 Valentine này anh vẫn một mình, nếu em cũng thế thì mình yêu đi! 😘"
+      </p>
+    </div>
+    <div class="buttons">
+      <button class="btn" onclick="agreed()">😍 Em đồng ý</button>
+      <button class="btn" onclick="refused()">😅 Chờ lúc khác</button>
+    </div>
+  </body>
+</html>
